@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Hotel Booking</title>
+ <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+</head>
+<body>
+   <a href ="main.html"><font face = "JasmineUPC" size = "6">Back To Main &#11013;</font></a>
+ <h3>Hotel Booking</h3>
+ <table>
+ <form method="POST" action="https://angsila.cs.buu.ac.th/~wittawas/632/88726059/lab02/afile.php">
+<tr><td><label for="roomtype">Room Type</label></td>
+<td colspan="2"><select name="roomtype">
+ <option value="0">Please Select
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+ <option value="Standard">Standard</option>
+ <option value="Luxury">Luxury</option>
+ <option value="Deluxe">Deluxe</option>
+ </select></td></tr>
+
+ <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+
+ <tr><td><label for="numguest">Number of Guests&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td colspan="2"><select name="numguest">
+     <option value="0">Please Select
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+     <option value="1-2">1-2</option>
+     <option value="3-4">3-4</option>
+     <option value="5-6">5-6</option>
+     <option value="7-8">7-8</option>
+     </select></td></tr>
+
+<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+<tr><td><label for="fname" for="lname">Name</label></td>
+<td><input type="text" placeholder = "First" name="fname" id="fname">
+<input type="text" placeholder = "Last" name="lname" id="lname"></td></tr>
+
+<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+
+<tr><td colspan="1"><label for="email">Email</label></td>
+<td><input type="text" size = "46" placeholder = "john@company.com" name="email" id="email"></td></tr>
+
+<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+
+<tr><td colspan="1"><label for="arrivaldate" for="arrivaltime">Arrival</label></td>
+<td><input type="date" size = "14" placeholder="MM / DD / YYYY" name = "arrivaldate" id = "arrivaldate">
+<input type="time" size = "14" placeholder="HH / MM" name = "arrivaltime" id = "arrivaltime"></td>
+</tr>
+
+<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+
+<tr><td colspan="1"><label for="departuredate" for="departuretime">Departure</label></td>
+   <td><input type="date" size = "14" placeholder="MM / DD / YYYY" name = "departuredate" id = "departuredate">
+   <input type="time" size = "14" placeholder="HH / MM" name = "departuretime" id = "departuretime"></td>
+   </tr>
+
+<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+
+<tr><td colspan="1"><label for="pickup">Free Pickup</label></td>
+<td><input type="radio" name="pickup" id="pickup" value="Yes">Yes, Sure!<br>
+<input type="radio" name="pickup" id="pickup" value="No">No, I already rented car.</td>
+</tr>
+
+<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+
+<tr><td colspan="1"><label for="flightnum">Flight Number</label></td>
+<td><input type="text" size = "46" placeholder = "C1209" name="flightnum" id="flightnum"></td></tr>
+
+<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+
+<tr><td colspan="1"><label for="flightnum">Other requests</label></td>
+<td><Textarea name="otherreq" id="otherreq" rows="5" cols="48"></Textarea></td>
+</tr>
+
+<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+
+<tr><td></td><td><input type="submit" value="Complete Reservation"></td></tr>
+</form>
+</table>
