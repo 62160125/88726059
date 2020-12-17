@@ -1,0 +1,32 @@
+<!doctype html>
+<head>
+</head>
+<body>
+    <h1>Random Number (0-100)</h1>
+    <input type="text" id="gnum"></input>
+    <br><br>
+    <button onclick="myFunction()"; onclick="guess()" >Submit</button>
+<script>
+    //alert("Hello")
+    rn = Math.floor(Math.random() * 100);
+    max = "มากไป"
+    min = "น้อยไป"
+    eql = "ถูกต้อง"
+    document.write(rn);
+    function myFunction() {
+  var x = document.getElementById("gnum").value;
+  document.getElementById("guessnum").innerHTML += x+" ";
+}
+    function guess(){
+    var x = document.getElementById("gnum").value;
+  if(rn > x){document.getElementById("gsum").innerHTML = "min"}
+  else if(rn < x){document.write(x+" "+max);}
+  else if(rn = x){document.write(x+" "+eql);}
+}
+   
+</script>
+
+<p id="guessnum"></p><br>
+<p id="gsum"></p>
+</body>
+
