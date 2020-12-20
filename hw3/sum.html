@@ -1,0 +1,23 @@
+<!doctype html>
+<h2>4.โปรแกรม บวกสะสม</h2>
+<script>
+function plus(){
+   var x = document.getElementById("n1").value;
+   var y = document.getElementById("n2").value;
+   var z = 0;
+   var i = document.getElementById("n1").value;
+   
+   for (; i < Number(y)+1; i++) {
+    z=Number(z)+Number(i);
+    if(i<y)document.getElementById("show").innerHTML += i+"+" ;
+    else if(i=y)document.getElementById("show").innerHTML += i+" = "+z ;
+   }
+    }
+</script>
+<body>
+    <input type="number" placeholder="Input your First Number" id="n1" >
+    -
+    <input type="number" placeholder="Input your Second Number" id="n2" >
+    <button onclick="plus()" >Summary</button>
+<p id="show"></p>
+</body>
