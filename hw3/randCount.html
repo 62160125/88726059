@@ -1,0 +1,55 @@
+<!doctype html>
+<h2>5.โปรแกรม สุ่มตัวเลข 0-99</h2>
+<head>
+<style>
+    table, td {
+      border: 1px solid black;
+    }
+</style>
+</head>
+<script>
+
+function guess(){
+    var x = document.getElementById("count").value;
+    var a = [x];
+    var b = [x];
+    var c = 0;
+for (var i = 0; i<x; i++){
+    b[i]=0;
+}
+for (var i = 0; i<x; i++){
+    rn = Math.floor(Math.random() * 100);
+    a[i] = rn;   
+    
+}
+for (var i = 0; i<x; i++){
+    for(var z = 0; z<x; z++)
+    if(z!=i)
+    if(a[i]==a[z])b[i]++;a[z]=0;}
+
+for (var i = 0; i<x; i++){ 
+    var table = document.getElementById("myTable");
+                var row = table.insertRow(i);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                
+
+                cell1.innerHTML = a[i],
+                cell2.innerHTML = b[i];
+               
+}
+    
+}
+
+
+
+</script>
+<body>
+
+<input type="number" placeholder="จำนวนครั้ง" id="count" >
+<button onclick="guess();ct()" >สุ่ม</button>
+<br>
+<table id="myTable" cellpadding="2" cellspacing="2" border="1" ></table>
+<p id="showa"></p>
+<p id="showb"></p>
+</body>
