@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+function gen(){
+    var x = document.getElementById("money").value;
+    var a1 = 0;
+    var a2 = 0;
+    var b1 = 0;
+    var b2 = 0;
+    var c1 = 0;
+    var c2 = 0;
+    var d1 = 0;
+    var d2 = 0;
+    var e1 = 0;
+    var e2 = 0;
+    var f1 = 0;
+    var f2 = 0;
+    var g1 = 0;
+    var g2 = 0;
+    var h1 = 0;
+    var h2 = 0;
+    var i1 = 0;
+    var i2 = 0;
+    if(x>=1000) a1=x/1000;a2=x-(Math.floor(a1)*1000);
+    document.getElementById("show1").innerHTML = "แบ๊ง 1000 : "+Math.floor(a1)+" ใบ";
+    if(a2>=500) b1=a2/500;b2=a2-(Math.floor(b1)*500);
+    document.getElementById("show2").innerHTML = "แบ๊ง 500 : "+Math.floor(b1)+" ใบ";
+    if(b2>=100) c1=b2/100;c2=b2-(Math.floor(c1)*100);
+    document.getElementById("show3").innerHTML = "แบ๊ง 100 : "+Math.floor(c1)+" ใบ";
+    if(c2>=50) d1=c2/50;d2=c2-(Math.floor(d1)*50);
+    document.getElementById("show4").innerHTML = "แบ๊ง 50 : "+Math.floor(d1)+" ใบ";
+    if(d2>=20) e1=d2/20;e2=d2-(Math.floor(e1)*20);
+    document.getElementById("show5").innerHTML = "แบ๊ง 20 : "+Math.floor(e1)+" ใบ";
+    if(e2>=10) f1=e2/10;f2=e2-(Math.floor(f1)*10);
+    document.getElementById("show6").innerHTML = "เหรียญ 10 : "+Math.floor(f1)+" เหรียญ";
+    if(f2>=5) g1=f2/5;g2=f2-(Math.floor(g1)*5);
+    document.getElementById("show7").innerHTML = "เหรียญ 5 : "+Math.floor(g1)+" เหรียญ";
+    if(g2>=2) h1=g2/2;h2=g2-(Math.floor(h1)*2);
+    document.getElementById("show8").innerHTML = "เหรียญ 2 : "+Math.floor(h1)+" เหรียญ";
+    if(h2>=1) i1=h2/1;i2=h2-(Math.floor(i1)*1);
+    document.getElementById("show9").innerHTML = "เหรียญ 1 : "+Math.floor(i1)+" เหรียญ";
+
+}
+</script>
+<body>
+<input type="text" placeholder = "จำนวนเงิน" id="money">
+<button onclick="gen()" >Convert</button>
+<p id="show1"></p>
+<p id="show2"></p>
+<p id="show3"></p>
+<p id="show4"></p>
+<p id="show5"></p>
+<p id="show6"></p>
+<p id="show7"></p>
+<p id="show8"></p>
+<p id="show9"></p>
+</body>

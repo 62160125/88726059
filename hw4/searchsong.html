@@ -1,4 +1,104 @@
-<!doctype html>
-    <h2>ค้นหาเพลง</h2>
-    <input type="text" placeholder="ชื่อเพลงที่ต้องการค้นหา" id="musicn"><br><br>
-<button onclick="" type="button" >ค้นหาเพลง</button>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search Music</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <style>
+        /* Make the image fully responsive */
+        .carousel-inner img {
+
+          width: 100%;
+          height: 100%;
+        }
+        .black {
+              font-size: 1.5em;
+              color: rgb(0, 0, 0);
+              font-weight: bold;
+            }
+            .orange {
+              font-size: 1.5em;
+              color: rgb(255, 136, 0);
+              font-weight: bold;
+            }
+        </style>
+    <title>Search Music</title>
+</head>
+<body>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://blog.mozilla.org/firefox/files/2020/05/Zoom-background-2.jpg" alt="P1" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.vocaloidnews.net/wp-content/uploads/2020/12/vocaloidcollection-1-660x330.jpg" alt="P2" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.teahub.io/photos/full/343-3438829_free-len-kagamine-high-quality-wallpaper-id-len.jpg" alt="P3" width="1100" height="500">
+          </div>
+        </div>
+        
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+
+<h1>Search Music</h1><a href="newsong.html"><p style="font-size:20px">[Add Song]</a></p><hr/>
+<input type="text" id="name" placeholder="ชื่อเพลงที่ต้องการค้นหา"><br>
+<button onclick="SMusic()" class="btn btn-primary">ค้นหา</button>
+<div id="show1"></div>
+<div id="show2"></div>
+<script>
+    function SMusic() {
+        getjson = JSON.parse(localStorage.getItem("song"));
+        data = "";
+        count = 0;
+        nsong = document.getElementById("name").value;
+        
+
+        for(i=0 ; i<getjson.length ; i++){
+          if(Number(getjson[i][0].indexOf(nsong)) > -1) {
+            count++;
+          }
+          if(count > 0 && nsong != ""){
+            document.getElementById('show1').innerHTML = "<div class = 'orange'>พบ "+count+ "เพลง</div>";
+        
+            data += "<div class = 'black'>เพลง "+getjson[i][0]+"</div><br>";
+            data +="<div class = 'black'>ศิลปิน "+getjson[i][1]+"</div><br>";
+            data += nl2br(getjson[i][2])+"<br>";
+            document.getElementById('show2').innerHTML = data;
+          }else{
+            document.getElementById('show1').innerHTML ='ไม่พบเพลง '+nsong;
+
+            data = "";
+            document.getElementById('show2').innerHTML = data;
+          }
+
+         }
+        
+    
+        function nl2br(str,is_xhtml){
+          var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
+          return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g,'$1'+breakTag+'$2');
+        }
+      }
+</script>
+</body>
+</html>

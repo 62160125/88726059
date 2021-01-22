@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<script>
+    var e = 0;
+    var d = 0;
+function guess(n){
+    rn = Math.floor(Math.random() * 3);
+    var a = "";
+    var b = "";
+    var c = "";
+    
+    
+    if(rn==0)a="ค้อน";
+    if(rn==1)a="กรรไกร";
+    if(rn==2)a="กระดาษ";
+    if(n==0)b="ค้อน";
+    if(n==1)b="กรรไกร";
+    if( n==2)b="กระดาษ";
+    document.getElementById("a0").innerHTML = b+" vs "+a;
+    
+    if(n==rn){
+    c="เสมอ";
+    document.getElementById("a1").innerHTML = "เสมอ";}
+    else if(n==1&&rn==0){
+    c="แพ้";
+    document.getElementById("a1").innerHTML = "แพ้";}
+    else if(n==1&&rn==2){
+    c="ชนะ";
+    document.getElementById("a1").innerHTML = "ชนะ";}
+    else if(n==0&&rn==2){
+    c="แพ้";
+    document.getElementById("a1").innerHTML = "แพ้";}
+    else if(n==0&&rn==1){
+    c="ชนะ";
+    document.getElementById("a1").innerHTML = "ชนะ";}
+    else if(n==2&&rn==1){
+    c="แพ้";
+    document.getElementById("a1").innerHTML = "แพ้";}
+    else if(n==2&&rn==0){
+    c="ชนะ";
+    document.getElementById("a1").innerHTML = "ชนะ";}
+
+    document.getElementById('his').innerHTML += " "+c;
+
+}
+</script>
+<body style="background-color:rgb(245, 255, 153);">
+<p id="h1">โปรแกรมเป่ายิ้งฉุบ &#129315;</p>
+<p id="a0"></p>
+<p id="a1"></p>
+<button onclick="guess(0)" type="button" class="but">ค้อน &#9994;</button>
+<button onclick="guess(1)" type="button" class="but">กรรไกร &#9996;</button>
+<button onclick="guess(2)" type="button" class="but">กระดาษ &#9995;</button>
+<p id="his">ประวัติการเล่น : </p>
+</body>   

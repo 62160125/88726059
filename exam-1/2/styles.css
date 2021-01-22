@@ -1,0 +1,26 @@
+body {
+    font-family: "JasmineUPC";
+    font-size : xx-large;
+    background-color: #ecc3ec;
+    
+}
+
+#main{
+    font-family: "JasmineUPC";
+    font-size : 50px;
+}
+
+tr.tr{
+    background-color: #876ceb;
+}
+
+.name{
+    font-family: "JasmineUPC";
+    font-size : 50px;   
+}
+
+p.id,p.age{
+    font-family: "JasmineUPC";
+    font-size : 50px;
+    color: black;
+}

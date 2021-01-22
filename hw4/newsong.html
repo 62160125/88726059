@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Add new song</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <style>
+        /* Make the image fully responsive */
+        .carousel-inner img {
+
+          width: 100%;
+          height: 100%;
+        }
+        .black {
+              font-size: 1.5em;
+              color: rgb(0, 0, 0);
+              font-weight: bold;
+            }
+            .orange {
+              font-size: 1.5em;
+              color: rgb(255, 136, 0);
+              font-weight: bold;
+            }
+        </style>
+    <title>Add new song</title>
+</head>
+<body>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://blog.mozilla.org/firefox/files/2020/05/Zoom-background-2.jpg" alt="P1" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.vocaloidnews.net/wp-content/uploads/2020/12/vocaloidcollection-1-660x330.jpg" alt="P2" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.teahub.io/photos/full/343-3438829_free-len-kagamine-high-quality-wallpaper-id-len.jpg" alt="P3" width="1100" height="500">
+          </div>
+        </div>
+        
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+
+<h1>Add new song</h1><a href="searchsong.html"><p style="font-size:20px">[Search Music]</a></p><hr/>
+<input type="text" id="name" placeholder="ชื่อเพลง"><br><br>
+<input type="text" id="artist" placeholder="ศิลปิน"><br><br>
+<textarea id="lyrics" rows="10" cols="90" placeholder="เนื้อร้อง"></textarea><br>
+<button onclick="Add()" >Save</button>
+<button onclick="Clear()" >Clear Form</button>
+
+<script>
+function Add() {
+    song = localStorage.getItem('song');
+    if(song === null){
+        song = [];
+    }else{
+        song = JSON.parse(song);
+    }
+    item = [
+        name = document.getElementById("name").value,
+        artist = document.getElementById("artist").value,
+        lyrics = document.getElementById("lyrics").value
+    ];
+    song.push(item);
+
+    localStorage.setItem("song", JSON.stringify(song));
+    document.getElementById("name").value = ""
+    document.getElementById("artist").value = ""
+    document.getElementById("lyrics").value = ""
+
+
+}
+function Clear() {
+    document.getElementById("name").value = ""
+    document.getElementById("artist").value = ""
+    document.getElementById("lyrics").value = ""
+}
+</script>
+</body>
+</html>
