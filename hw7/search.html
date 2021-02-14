@@ -1,0 +1,58 @@
+<h4>Search</h4>
+<input type="text" id="kw" placeholder="ชื่อศิลปิน">
+<button class="btn btn-danger" onclick="search()">Search</button>
+<form method="post" action="search_post.php">
+    <input type="submit" value="Advance Search">
+</form>
+<div id="disp"></div>
+
+    <head>
+
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+      
+      </head>
+
+<script>
+    function search(){
+        kw = document.getElementById('kw').value;
+        //alert(kw);
+        console.log("kw=" +kw);
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function(){
+            if (this.readyState == 4 && this.status == 200) {
+                //document.getElementById('disp').innerHTML = this.responseText;
+                arr = JSON.parse(this.responseText);
+                console.log(arr);
+                if(arr.length == 0){
+                    document.getElementById('disp').innerHTML = "Not found";
+                } else {
+                    html ="";
+                    for (i = 0; i < arr.length; i++) {
+                        html += "ชื่อเพลง : "+arr[i].musicName +"<br>"+" ชื่ออัลบั้ม : "+ arr[i].albumName +"<br>"+" ความยาวเพลง : "+ arr[i].songLenght +"<br><br>";
+                    }
+                    document.getElementById('disp').innerHTML = html;
+                }
+            }
+        }
+        parameters = "kw=" + kw;
+        xmlhttp.open("post", "search.php");
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send(parameters);
+    }
+</script>
+
+
+
+
+
+
+
+
+<!-- <form method="post" action="search.php">
+    <input type="text" name="kw" id="kw">
+    <input type="submit" value="Search">
+</form> -->
